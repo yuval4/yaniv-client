@@ -1,4 +1,6 @@
-const socket = io("http://127.0.0.1:3000", { autoConnect: false });
+const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
+    autoConnect: false,
+});
 
 window.onload = () => {
     const name = prompt("Please enter your name", "");
