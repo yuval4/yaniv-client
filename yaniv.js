@@ -160,7 +160,7 @@ const takeCardFromDeck = () => {
 const createCard = (name) => {
     const card = document.createElement("img");
 
-    card.src = `/assets/cards/${name}.png`;
+    card.src = `./assets/cards/${name}.png`;
     card.classList.add("card");
     card.setAttribute("id", name);
 
