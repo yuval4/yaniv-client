@@ -76,7 +76,37 @@ const isStepValid = (cards) => {
     return false;
 };
 
-console.log(isStepValid(["8H", "7H", "9H"]));
-console.log(isStepValid(["6H", "7H", "8H"]));
-console.log(isStepValid(["6H", "7D", "8H"]));
-console.log(isStepValid(["6H", "2H", "8H"]));
+// console.log(isStepValid(["8H", "7H", "9H"]));
+// console.log(isStepValid(["6H", "7H", "8H"]));
+// console.log(isStepValid(["6H", "7D", "8H"]));
+// console.log(isStepValid(["6H", "2H", "8H"]));
+
+const players = [{
+        id: "RgLWOdA8IXXevFG-AAAF",
+        hand: ["3H"],
+        name: "a",
+    },
+    {
+        id: "RgLWOd",
+        hand: ["10S", "8C"],
+        name: "b",
+    },
+    {
+        id: "Rg",
+        hand: ["2H", "AC", "8C"],
+        name: "c",
+    },
+];
+
+const calcHandSum = (hand) => {
+    return hand.reduce((total, id) => total + cardsToNumber.get(id), 0);
+};
+
+const getMinHandPlayer = (players) => {
+    return players.reduce((prev, curr) => {
+        console.log(calcHandSum(prev.hand), calcHandSum(curr.hand));
+        return calcHandSum(prev.hand) < calcHandSum(curr.hand) ? prev : curr;
+    });
+};
+
+console.log(getMinHandPlayer(players));

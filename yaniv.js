@@ -2,6 +2,10 @@ const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
     autoConnect: false,
 });
 
+// const socket = io("http://127.0.0.1:3000/", {
+//     autoConnect: false,
+// });
+
 window.onload = () => {
     const name = prompt("Please enter your name", "");
     document.getElementById("my-name").innerHTML = name;
@@ -114,6 +118,14 @@ window.onload = () => {
             document.getElementById("main").classList.remove("disable-screen");
         }
     });
+
+    socket.on("onPlayerWin", ({ winner, state }) => {
+        alert(`the winner is ${winner.name}`);
+    });
+
+    socket.on("onAsaf", ({ winner, state }) => {
+        alert(`the winner is ${winner.name}`);
+    });
 };
 
 const takeCardFromPile = (event) => {
@@ -191,6 +203,7 @@ const yanivPressed = () => {
 
     if (calcHandSum() <= 7) {
         yaniv.classList.add("yaniv-win");
+        socket.emit("onYaniv", socket.id);
     } else {
         yaniv.classList.add("yaniv-error");
 
