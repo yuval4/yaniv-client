@@ -210,6 +210,19 @@ const isStepValid = (cards) => {
         cardsToNumber.get(currentCard) - cardsToNumber.get(nexrCard)
     );
 
+    let isNumbersFollowing = true;
+
+    for (let index = 0; index < cards.length - 1; index++) {
+        if (
+            cardsToNumber.get(cards[index]) ===
+            cardsToNumber.get(cards[index + 1]) - 1
+        ) {
+            isNumbersFollowing = isNumbersFollowing && true;
+        } else {
+            isNumbersFollowing = isNumbersFollowing && false;
+        }
+    }
+
     if (
         cards.length > 1 &&
         cards.every(
@@ -219,10 +232,8 @@ const isStepValid = (cards) => {
         return true;
     } else if (
         cards.length > 2 &&
-        cards.every(
-            (a, b) => cardsToNumber.get(a) === cardsToNumber.get(b) + 1
-        ) &&
-        cards.every((card) => card.at(-1) === cards[0].at(-1))
+        isNumbersFollowing &&
+        cards.every((card) => card.slice(-1) === cards[0].slice(-1))
     ) {
         return true;
     }
