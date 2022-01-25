@@ -120,6 +120,23 @@ window.onload = () => {
     });
 
     socket.on("onPlayerWin", ({ winner, state }) => {
+        const rivalCards = document.getElementById("rival-cards");
+
+        state.forEach((player) => {
+            if (player.id !== socket.id) {
+                document.getElementById("rival-name").innerHTML = player.name;
+
+                document.querySelectorAll(".rival-card").forEach((card) => {
+                    card.remove();
+                });
+
+                cards.forEach((card) => {
+                    const rivalCard = createCard(card);
+                    rivalCard.classList.add("rival-card");
+                    rivalCards.appendChild(rivalCard);
+                });
+            }
+        });
         alert(`the winner is ${winner.name}`);
     });
 
