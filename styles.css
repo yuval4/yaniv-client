@@ -40,7 +40,7 @@ body {
     right: 50%;
     align-items: center;
     gap: 15em;
-    width: 70%;
+    /* width: 70%; */
     /* background-color: darkkhaki; */
 }
 
@@ -150,10 +150,16 @@ body {
     background-color: tomato !important;
 }
 
-.yaniv-win {
+
+/* .yaniv-win {
     transform: scale(4);
     z-index: 2;
-}
+} */
+
+
+/* #winner {
+
+} */
 
 .selected-cards-error {
     animation: shake 0.5s;
@@ -207,5 +213,48 @@ body {
         font-size: 3em;
         top: 35px;
         left: 8px;
+    }
+}
+
+.yaniv-win {
+    background-color: beige;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 6em;
+    padding: 0.3em;
+    font-family: 'Bangers', cursive;
+    -webkit-animation: flip-scale-up-hor 0.9s linear reverse;
+    animation: flip-scale-up-hor 0.9s linear reverse;
+}
+
+@-webkit-keyframes flip-scale-up-hor {
+    0% {
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+    }
+    50% {
+        -webkit-transform: scale(2.5) rotateX(-90deg);
+        transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotateX(-180deg);
+        transform: scale(1) rotateX(-180deg);
+    }
+}
+
+@keyframes flip-scale-up-hor {
+    0% {
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+    }
+    50% {
+        -webkit-transform: scale(2.5) rotateX(-90deg);
+        transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotateX(-180deg);
+        transform: scale(1) rotateX(-180deg);
     }
 }

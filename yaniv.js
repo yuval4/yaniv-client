@@ -120,28 +120,19 @@ window.onload = () => {
     });
 
     socket.on("onPlayerWin", ({ winner, state }) => {
-        const rivalCards = document.getElementById("rival-cards");
-
-        state.forEach((player) => {
-            if (player.id !== socket.id) {
-                document.getElementById("rival-name").innerHTML = player.name;
-
-                document.querySelectorAll(".rival-card").forEach((card) => {
-                    card.remove();
-                });
-
-                cards.forEach((card) => {
-                    const rivalCard = createCard(card);
-                    rivalCard.classList.add("rival-card");
-                    rivalCards.appendChild(rivalCard);
-                });
-            }
-        });
-        alert(`the winner is ${winner.name}`);
+        finishGame(state);
+        const winnerBanner = document.createElement("p");
+        document.getElementById("control-center").appendChild(winnerBanner);
+        winnerBanner.innerText = `the winner is ${winner.name}`;
+        winnerBanner.classList.add("yaniv-win");
     });
 
     socket.on("onAsaf", ({ winner, state }) => {
-        alert(`the winner is ${winner.name}`);
+        finishGame(state);
+        const winnerBanner = document.createElement("p");
+        document.getElementById("control-center").appendChild(winnerBanner);
+        winnerBanner.innerText = `asaf! the winner is ${winner.name}`;
+        winnerBanner.classList.add("yaniv-win");
     });
 };
 
@@ -219,7 +210,6 @@ const yanivPressed = () => {
     const yaniv = document.getElementById("yaniv");
 
     if (calcHandSum() <= 7) {
-        yaniv.classList.add("yaniv-win");
         socket.emit("onYaniv", socket.id);
     } else {
         yaniv.classList.add("yaniv-error");
@@ -269,4 +259,26 @@ const isStepValid = (cards) => {
     }
 
     return false;
+};
+
+const finishGame = (playersState) => {
+    const rivalCards = document.getElementById("rival-cards");
+    console.log(playersState);
+    playersState.forEach((player) => {
+        if (player.id !== socket.id) {
+            document.getElementById("rival-name").innerHTML = player.name;
+
+            document.querySelectorAll(".rival-card").forEach((card) => {
+                card.remove();
+            });
+
+            player.hand.forEach((card) => {
+                const rivalCard = createCard(card);
+                rivalCard.classList.add("rival-card");
+                rivalCards.appendChild(rivalCard);
+            });
+        }
+    });
+
+    document.getElementById("main").classList.add("disable-screen");
 };
