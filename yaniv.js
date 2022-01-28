@@ -8,11 +8,14 @@ const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
 
 window.onload = () => {
     const name = prompt("Please enter your name", "");
+    const roomName = prompt("Room name to join:", "");
     document.getElementById("my-name").innerHTML = name;
 
     socket.connect();
 
-    socket.emit("onGetPlayerName", name);
+    socket.emit("onJoinRoom", roomName).then(() => {
+        socket.emit("onGetPlayerName", name);
+    });
 
     document.getElementById("deck").addEventListener("click", takeCardFromDeck);
 
