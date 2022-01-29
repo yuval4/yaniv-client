@@ -8,7 +8,7 @@ const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
 
 window.onload = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    history.replaceState({}, null, "/Yaniv-client/game.html");
+    history.replaceState({}, null, "/yaniv-client/game.html");
 
     document.getElementById("my-name").innerHTML = urlParams.get("name");
 
