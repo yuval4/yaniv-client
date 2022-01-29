@@ -13,9 +13,8 @@ window.onload = () => {
 
     socket.connect();
 
-    socket.emit("onJoinRoom", roomName).then(() => {
-        socket.emit("onGetPlayerName", name);
-    });
+    socket.emit("onJoinRoom", roomName);
+    socket.emit("onGetPlayerName", name);
 
     document.getElementById("deck").addEventListener("click", takeCardFromDeck);
 
