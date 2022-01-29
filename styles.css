@@ -86,7 +86,7 @@ body {
     border-radius: 50%;
     border-width: 0px;
     transition: background-color 1s ease;
-    background-color: rgba(131, 143, 245, 1);
+    background-color: #838ff5;
     position: relative;
     cursor: pointer;
 }

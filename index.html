@@ -18,19 +18,21 @@
 <body>
     <script src="index.js"></script>
 
-    <main>
+    <main id="main">
         <h1 class="title">yaniv</h1>
-        <form name="login" class="form-floating" onsubmit="joinRoom(event)">
+        <form name="login" id="login" class="form-floating m-4" onsubmit="joinRoom(event)">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" placeholder="name" value="a" required />
+                <input type="text" class="form-control" id="name" placeholder="name" required />
                 <label for="name">name</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="code" placeholder="code" value="b" required />
+                <input type="text" class="form-control" id="code" placeholder="code" required />
                 <label for="code">code</label>
             </div>
 
-            <button type="submit" id="start-button">let's play -></button>
+            <button type="submit" id="start-button" class="m-5">
+                    let's play ->
+                </button>
         </form>
     </main>
 

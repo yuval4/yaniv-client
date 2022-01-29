@@ -1,5 +1,18 @@
 body {
+    text-align: center;
     animation: bganimation 60s infinite;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#login {
+    width: 30vw;
 }
 
 .title {
@@ -21,11 +34,8 @@ body {
 
 #start-button {
     background-color: transparent;
-    /* background-color: tomato; */
     border-radius: 8px;
     border-color: transparent;
-    /* height: 3em;
-    width: 4em; */
     font-size: 2em;
     font-weight: 800;
 }
@@ -35,26 +45,29 @@ body {
 }
 
 #start-button:active {
-    color: #2196f3;
+    color: #0d6efd;
 }
 
 @keyframes bganimation {
     0% {
-        background-color: aquamarine;
+        background-color: #7CCEE8;
     }
-    20% {
-        background-color: bisque;
+    17% {
+        background-color: #848FF5;
     }
-    40% {
-        background-color: blueviolet;
+    34% {
+        background-color: #90F080;
     }
-    60% {
-        background-color: cadetblue;
+    51% {
+        background-color: #f5deb3;
     }
-    80% {
-        background-color: crimson;
+    68% {
+        background-color: #FF6347;
+    }
+    85% {
+        background-color: #FF83F3;
     }
     100% {
-        background-color: aquamarine;
+        background-color: #7CCEE8;
     }
 }
