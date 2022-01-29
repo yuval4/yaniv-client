@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>yaniv</title>
+</head>
+
+<body>
+    <main id="main">
+        <section id="rival-table" class="table">
+            <p id="rival-name" class="name"></p>
+            <section id="rival-cards" class="cards"></section>
+        </section>
+
+        <section id="control-center">
+            <button id="yaniv" onclick="yanivPressed()">
+                    <span class="yaniv-button-text">yaniv!</span>
+                </button>
+            <div id="pile"></div>
+            <img src="./assets/cards/blue_back.png" id="deck" class="card" />
+        </section>
+
+        <section id="my-table" class="table">
+            <p id="my-name" class="name"></p>
+            <section id="my-cards" class="cards"></section>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="yaniv.js"></script>
+</body>
+
+</html>

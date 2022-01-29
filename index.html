@@ -11,34 +11,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>yaniv</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
 
 <body>
-    <main id="main">
-        <section id="rival-table" class="table">
-            <p id="rival-name" class="name"></p>
-            <section id="rival-cards" class="cards"></section>
-        </section>
+    <script src="index.js"></script>
 
-        <section id="control-center">
-            <button id="yaniv" onclick="yanivPressed()">
-                    <span class="yaniv-button-text">yaniv!</span>
-                </button>
-            <div id="pile"></div>
-            <img src="./assets/cards/blue_back.png" id="deck" class="card" />
-        </section>
+    <main>
+        <h1 class="title">yaniv</h1>
+        <form name="login" class="form-floating" onsubmit="joinRoom(event)">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="name" value="a" required />
+                <label for="name">name</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="code" placeholder="code" value="b" required />
+                <label for="code">code</label>
+            </div>
 
-        <section id="my-table" class="table">
-            <p id="my-name" class="name"></p>
-            <section id="my-cards" class="cards"></section>
-        </section>
+            <button type="submit" id="start-button">let's play -></button>
+        </form>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
-    <script src="utils.js"></script>
-    <script src="yaniv.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

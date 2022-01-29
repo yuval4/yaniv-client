@@ -7,14 +7,15 @@ const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
 // });
 
 window.onload = () => {
-    const name = prompt("Please enter your name", "");
-    const roomName = prompt("Room name to join:", "");
-    document.getElementById("my-name").innerHTML = name;
+    const urlParams = new URLSearchParams(window.location.search);
+    history.replaceState({}, null, "/game.html");
+
+    document.getElementById("my-name").innerHTML = urlParams.get("name");
 
     socket.connect();
 
-    socket.emit("onJoinRoom", roomName);
-    socket.emit("onGetPlayerName", name);
+    socket.emit("onJoinRoom", urlParams.get("code"));
+    socket.emit("onGetPlayerName", urlParams.get("name"));
 
     document.getElementById("deck").addEventListener("click", takeCardFromDeck);
 

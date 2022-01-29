@@ -1,0 +1,60 @@
+body {
+    animation: bganimation 60s infinite;
+}
+
+.title {
+    font-size: 9em;
+    font-family: 'Bangers', cursive;
+}
+
+.form-floating {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.form-control {
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: #212529 !important;
+}
+
+#start-button {
+    background-color: transparent;
+    /* background-color: tomato; */
+    border-radius: 8px;
+    border-color: transparent;
+    /* height: 3em;
+    width: 4em; */
+    font-size: 2em;
+    font-weight: 800;
+}
+
+#start-button:hover {
+    color: tomato;
+}
+
+#start-button:active {
+    color: #2196f3;
+}
+
+@keyframes bganimation {
+    0% {
+        background-color: aquamarine;
+    }
+    20% {
+        background-color: bisque;
+    }
+    40% {
+        background-color: blueviolet;
+    }
+    60% {
+        background-color: cadetblue;
+    }
+    80% {
+        background-color: crimson;
+    }
+    100% {
+        background-color: aquamarine;
+    }
+}

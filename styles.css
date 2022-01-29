@@ -112,7 +112,7 @@ body {
 
 #deck:hover {
     filter: hue-rotate(90deg);
-    border-radius: 16px;
+    border-radius: 4px;
     box-shadow: 0 0 20px 18px rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
@@ -129,7 +129,7 @@ body {
 }
 
 .top-pile:hover {
-    border-radius: 16px;
+    border-radius: 4px;
     box-shadow: 0 0 8px 7px rgba(255, 255, 255, 0.5);
 }
 
