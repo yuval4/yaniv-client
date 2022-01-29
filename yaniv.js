@@ -23,6 +23,10 @@ window.onload = () => {
         alert("Sorry, the game is over.\nthe other player has left the game.")
     );
 
+    socket.on("onRoomFull", (roomName) =>
+        alert("Room ", roomName, " is full, client - disconnected")
+    );
+
     socket.on("onGameStart", (cards) => {
         const myCards = document.getElementById("my-cards");
 
