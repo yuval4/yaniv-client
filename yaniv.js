@@ -24,7 +24,7 @@ window.onload = () => {
     );
 
     socket.on("onRoomFull", (roomName) =>
-        alert("Room ", roomName, " is full, client - disconnected")
+        alert(`Room ${roomName} is full, client - disconnected`)
     );
 
     socket.on("onGameStart", (cards) => {
