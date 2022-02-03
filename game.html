@@ -19,6 +19,8 @@
     <main id="main">
         <section id="rival-table" class="table">
             <p id="rival-name" class="name"></p>
+            <p class="name">total score: </p>
+            <p id="rival-total-score" class="name"></p>
             <section id="rival-cards" class="cards"></section>
         </section>
 
@@ -32,12 +34,18 @@
 
         <section id="my-table" class="table">
             <p id="my-name" class="name"></p>
+            <p class="name">total score: </p>
+            <p id="my-total-score" class="name"></p>
             <section id="my-cards" class="cards"></section>
         </section>
+
+        <button id="restart-button" onclick="restartGame()">play again</button>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
     <script src="utils.js"></script>
+    <script src="io.js"></script>
     <script src="yaniv.js"></script>
 </body>
 
