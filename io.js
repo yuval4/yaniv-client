@@ -11,6 +11,9 @@ window.onload = () => {
   history.replaceState({}, null, "/yaniv-client/game.html");
 
   document.getElementById("my-name").innerHTML = urlParams.get("name");
+  document.getElementById("restart-button").style.display = "none";
+  disableActions(document.getElementById("control-center"), true);
+  disableActions(document.getElementById("my-table"), true);
 
   socket.connect();
 
