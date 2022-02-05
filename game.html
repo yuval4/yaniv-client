@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <title>yaniv</title>
+        <link
+            rel="shortcut icon"
+            type="image/jpg"
+            href="assets/cards/honor_clubs.png"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>yaniv</title>
-    <link rel="shortcut icon" type="image/jpg" href="assets/cards/honor_clubs.png"/>
-</head>
+    <body>
+        <main id="main">
+            <section id="rival-table" class="table">
+                <div class="rival-info">
+                    <p id="rival-name" class="info"></p>
+                    <div class="score">
+                        <p class="info">total score:</p>
+                        <p
+                            id="rival-total-score"
+                            class="info numeric-score"
+                        ></p>
+                    </div>
+                </div>
+                <section id="rival-cards" class="cards"></section>
+            </section>
 
-<body>
-    <main id="main">
-        <section id="rival-table" class="table">
-            <p id="rival-name" class="name"></p>
-            <p class="name">total score: </p>
-            <p id="rival-total-score" class="name"></p>
-            <section id="rival-cards" class="cards"></section>
-        </section>
+            <section id="control-center">
+                <div id="control-action">
+                    <button id="yaniv" onclick="yanivPressed()">
+                        <span class="yaniv-button-text">yaniv!</span>
+                    </button>
+                    <div id="pile"></div>
+                    <img
+                        src="./assets/cards/blue_back.png"
+                        id="deck"
+                        class="card"
+                    />
+                </div>
 
-        <section id="control-center">
-            <button id="yaniv" onclick="yanivPressed()">
-                    <span class="yaniv-button-text">yaniv!</span>
-                </button>
-            <div id="pile"></div>
-            <img src="./assets/cards/blue_back.png" id="deck" class="card" />
-        </section>
+                <div id="game-over">
+                    <p id="winner-banner" class="yaniv-win"></p>
+                    <button class="play-again" onclick="restartGame()">
+                        play again
+                    </button>
+                </div>
+            </section>
 
-        <section id="my-table" class="table">
-            <p id="my-name" class="name"></p>
-            <p class="name">total score: </p>
-            <p id="my-total-score" class="name"></p>
-            <section id="my-cards" class="cards"></section>
-        </section>
+            <section id="my-table" class="table">
+                <div class="my-info">
+                    <p id="my-name" class="info"></p>
+                    <div class="score">
+                        <p class="info">total score:</p>
+                        <p id="my-total-score" class="info numeric-score"></p>
+                    </div>
+                </div>
 
-        <button id="restart-button" onclick="restartGame()">play again</button>
+                <section id="my-cards" class="cards"></section>
+            </section>
+        </main>
 
-    </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
-    <script src="utils.js"></script>
-    <script src="io.js"></script>
-    <script src="yaniv.js"></script>
-</body>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+        <script src="utils.js"></script>
+        <script src="io.js"></script>
+        <script src="yaniv.js"></script>
+    </body>
 </html>
