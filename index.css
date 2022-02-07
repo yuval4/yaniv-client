@@ -48,6 +48,17 @@ body {
     color: #0d6efd;
 }
 
+#complaints-box {
+    text-decoration:none;
+    font-family: 'Heebo', sans-serif;
+    color: #212529;
+}
+
+#complaints-box:hover {
+    color: black;
+}
+
+
 @keyframes bganimation {
     0% {
         background-color: #7CCEE8;
