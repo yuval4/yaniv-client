@@ -1,5 +1,5 @@
 const socket = io("https://yaniv-server-yuval.herokuapp.com/", {
-    autoConnect: false,
+  autoConnect: false,
 });
 
 // const socket = io("http://127.0.0.1:3000/", {
@@ -22,9 +22,11 @@ window.onload = () => {
 
   document.getElementById("deck").addEventListener("click", takeCardFromDeck);
 
-  socket.on("onClientDisconnect", () =>
-    alert("Sorry, the game is over.\nthe other player has left the game.")
-  );
+  socket.on("onClientDisconnect", () => {
+    alert("Sorry, the game is over.\nthe other player has left the game.");
+
+    window.location = `/`;
+  });
 
   socket.on("onRoomFull", (roomName) =>
     alert(`Room ${roomName} is full, client - disconnected`)
